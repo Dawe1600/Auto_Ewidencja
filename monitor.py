@@ -296,7 +296,7 @@ class DownloadsAIHandler(FileSystemEventHandler):
         
         for attempt in range(1, max_retries + 1):
             try:
-                response = client.models.generate_content(model='gemma-3-27b-it', contents=[prompt, img])
+                response = client.models.generate_content(model='gemini-3.1-flash-lite', contents=[prompt, img])
                 
                 match = re.search(r'\{.*\}', response.text, re.DOTALL)
                 if not match:
